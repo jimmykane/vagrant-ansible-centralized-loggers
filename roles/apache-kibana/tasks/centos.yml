@@ -1,0 +1,3 @@
+- include: install_httpd.yml
+- include: adduser_centos.yml
+- include: createvhost_centos.yml

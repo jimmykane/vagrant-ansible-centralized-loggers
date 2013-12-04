@@ -1,0 +1,5 @@
+- name: Create Logstash dir
+  file: path="/usr/share/logstash/bin" owner=root group=root mode=0755 state=directory
+- name: Fetch Logstash Jar
+  command: wget {{ lgurl }}-{{ lgver }}-flatjar.jar -O /usr/share/logstash/bin/logstash-{{ lgver }}-flatjar.jar
+

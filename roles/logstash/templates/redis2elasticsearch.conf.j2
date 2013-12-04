@@ -1,0 +1,15 @@
+input {
+	redis {
+		host => "127.0.0.1"
+		type => "redis-input"
+		data_type => "list"
+		key => "syslog"
+	}
+}
+
+output {
+	elasticsearch {
+		host => "127.0.0.1"
+	}
+
+}

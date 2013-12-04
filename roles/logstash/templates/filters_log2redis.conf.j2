@@ -1,0 +1,10 @@
+{{ ansible_managed }}
+filter {
+# dummy filter. Add your own
+        if [message] =~ "somemessage" {
+		mutate {
+			add_tag => [ "somemessage" ]			
+		}
+       }
+}
+{{ ansible_managed }}

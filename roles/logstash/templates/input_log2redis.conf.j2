@@ -1,0 +1,12 @@
+{{ ansible_managed }}
+input {
+	file {
+		type => "linux-syslog"
+		path => ["/var/log/*.log"]
+		sincedb_path => "/usr/share/logstash/"
+		exclude => [ "*.gz" ]
+		codec => plain { charset => "ISO-8859-1" }
+	}
+}
+{{ ansible_managed }}
+

@@ -1,0 +1,2 @@
+- include: logstash_inst.yml
+- include: logstash_conf.yml

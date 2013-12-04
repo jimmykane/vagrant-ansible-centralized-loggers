@@ -1,0 +1,12 @@
+- name: Install wget
+  yum: name=wget state=present
+- name: Fetch Elasticsearch .rpm
+  command: wget {{ elurl }}-{{ ver }}.noarch.rpm -O /tmp/elasticsearch-{{ ver }}.noarch.rpm creates=/tmp/elasticsearch-{{ ver }}.noarch.rpm
+- name: Install Elasticsearch from .rpm
+  yum:  name=/tmp/elasticsearch-{{ ver }}.noarch.rpm state=present
+- name: Create templates directory
+  file: path=/usr/share/elasticsearch/config/templates owner=root group=root mode=0755 state=directory
+- name: Create Logstash mapping
+  template: src=logstash_mapping.j2 dest=/usr/share/elasticsearch/config/templates/logstash_mapping.json owner=root group=root mode=0644
+  notify:
+   - restart elasticsearch

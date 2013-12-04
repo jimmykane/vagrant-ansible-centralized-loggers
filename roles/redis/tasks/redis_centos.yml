@@ -1,0 +1,11 @@
+- name: Install Redis
+  yum: name={{ item }} state=installed
+  with_items:
+   - redis
+  notify:
+   - restart redis centos
+- name: Copy Redis config
+  template: src=redis-centos.j2 dest=/etc/redis.conf owner=root group=root mode=0644
+  notify:
+   - restart redis centos
+

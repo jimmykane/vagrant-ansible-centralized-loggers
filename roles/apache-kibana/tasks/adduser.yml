@@ -1,0 +1,17 @@
+- name: Create Vhost User
+  user: name={{ usname }}
+- name: Create Vhost public_html
+  file: path=/home/{{ usname }}/public_html owner={{ usname }} group={{ usname }} mode=0755 state=directory
+- name: Create Vhost log directory
+  file: path=/home/{{ usname }}/logs owner=root group=root mode=0755 state=directory
+- name: Create a placeholder index.html
+  template: src=index.j2 dest=/home/{{ usname }}/public_html/index.html owner={{ usname }} group=www-data mode=0644
+- name: Unarchive Kibana
+  unarchive: src="kibana.tar.gz" dest=/home/{{ usname }}/public_html/
+- name: Set Kibana permission
+  command: /bin/chown -R {{ usname }}.{{ usname }} /home/{{ usname }}/public_html/
+- name: Create htaccess for user
+  template: src=htaccess.j2 dest=/home/{{ usname }}/public_html/.htaccess owner={{ usname }} group={{ usname }} mode=0644
+- name: Create htpasswd User
+  htpasswd: path=/etc/apache2/passwd name={{ usname }} password={{ pass }} owner=root group=www-data mode=0640
+

@@ -1,0 +1,4 @@
+elurl: "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch"
+lgurl: "https://download.elasticsearch.org/logstash/logstash/logstash"
+ver: "0.90.3"
+lgver: "1.2.2"

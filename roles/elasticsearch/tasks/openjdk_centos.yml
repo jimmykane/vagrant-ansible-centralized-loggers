@@ -1,0 +1,4 @@
+- name: Enable Epel
+  yum: name=http://ftp.icm.edu.pl/pub/Linux/fedora/linux/epel/6/i386/epel-release-6-8.noarch.rpm state=present
+- name: Install OpenJDK
+  yum: name=java-1.7.0-openjdk state=present

@@ -1,0 +1,25 @@
+{{ ansible_managed }}
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /home/{{ usname }}/public_html
+	<Directory />
+		Options -FollowSymLinks
+		AllowOverride All
+	</Directory>
+	<Directory /home/{{ usname }}/public_html>
+		Options -Indexes -FollowSymLinks -MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /home/{{ usname }}/logs/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /home/{{ usname }}/logs/access.log combined
+</VirtualHost>
+{{ ansible_managed }}

@@ -1,0 +1,10 @@
+- name: Create Vhost from template
+  template: src=vhost.j2 dest=/etc/apache2/sites-available/{{ domain }}.conf owner=root group=root mode=0644
+- name: Disable default vhost
+  command: /usr/sbin/a2dissite default
+  notify:
+   - restart apache
+- name: Activate Vhost with symlink
+  file: src=/etc/apache2/sites-available/{{ domain }}.conf dest=/etc/apache2/sites-enabled/{{ domain }}.conf owner=root group=root mode=0644 state=link
+  notify:
+   - restart apache

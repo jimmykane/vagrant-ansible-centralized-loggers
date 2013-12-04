@@ -1,0 +1,6 @@
+- name: Install Apache Debian
+  apt: pkg={{ item }} state=installed
+  with_items:
+   - apache2
+   - python-passlib
+

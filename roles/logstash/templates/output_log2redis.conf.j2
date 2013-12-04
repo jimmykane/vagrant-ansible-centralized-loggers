@@ -1,0 +1,9 @@
+{{ ansible_managed }}
+output {
+	redis {
+		host => "127.0.0.1"
+		data_type => "list"
+		key => "syslog"
+	}
+}
+{{ ansible_managed }}

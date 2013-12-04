@@ -1,0 +1,12 @@
+- name: Fetch Elasticsearch .deb
+  command: wget {{ elurl }}-{{ ver }}.deb -O /tmp/elasticsearch-{{ ver }}.deb
+- name: Install Elasticsearch from .deb
+  command: dpkg -i --skip-same-version /tmp/elasticsearch-{{ ver }}.deb
+  register: dpkg_result
+  changed_when: "dpkg_result.stdout.startswith('Selecting')" # see http://stackoverflow.com/questions/19127493
+- name: Create templates directory
+  file: path=/usr/share/elasticsearch/config/templates owner=root group=root mode=0755 state=directory
+- name: Create Logstash mapping
+  template: src=logstash_mapping.j2 dest=/usr/share/elasticsearch/config/templates/logstash_mapping.json owner=root group=root mode=0644
+  notify:
+   - restart elasticsearch

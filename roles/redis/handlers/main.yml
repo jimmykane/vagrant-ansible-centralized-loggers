@@ -1,0 +1,2 @@
+- include: restartredis.yml
+- include: restartredis_centos.yml
