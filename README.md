@@ -1,5 +1,7 @@
 ### Ansible Playbook for automate the setup and configuration of a centralized Rsyslog server with Logstash, Elasticsearch, Redis and Kibana.
 
+This playbook is intended to be run against a clean server (not clients) that will be used as central logger. After the setup of the server, clients cat be instructed to redirect all logs to the central location.
+
 **Platform**: Tested on **Debian 7 x64** / **CentOS 6.4 x64**
 
 **Disclaimer**: do not run this Playbook on a live production system!! Use a dedicated instance instead.
