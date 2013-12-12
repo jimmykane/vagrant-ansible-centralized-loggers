@@ -7,6 +7,6 @@
 - name: Create templates directory
   file: path=/usr/share/elasticsearch/config/templates owner=root group=root mode=0755 state=directory
 - name: Create Logstash mapping
-  template: src=logstash_mapping.j2 dest=/usr/share/elasticsearch/config/templates/logstash_mapping.json owner=root group=root mode=0644
+  template: src=elasticsearch-template.json dest=/usr/share/elasticsearch/config/templates/elasticsearch-template.json owner=root group=root mode=0644
   notify:
    - restart elasticsearch
