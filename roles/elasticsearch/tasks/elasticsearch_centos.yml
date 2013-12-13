@@ -1,11 +1,16 @@
 - name: Install wget
   yum: name=wget state=present
+
 - name: Fetch Elasticsearch .rpm
   command: wget {{ elurl }}-{{ ver }}.noarch.rpm -O /tmp/elasticsearch-{{ ver }}.noarch.rpm creates=/tmp/elasticsearch-{{ ver }}.noarch.rpm
+
 - name: Install Elasticsearch from .rpm
   yum:  name=/tmp/elasticsearch-{{ ver }}.noarch.rpm state=present
+
 - name: Create templates directory
   file: path=/usr/share/elasticsearch/config/templates owner=root group=root mode=0755 state=directory
+
+# See http://www.elasticsearch.org/blog/new-in-logstash-1-3-elasticsearch-index-template-management/
 - name: Create Logstash mapping
   template: src=elasticsearch-template.json dest=/usr/share/elasticsearch/config/templates/elasticsearch-template.json owner=root group=root mode=0644
   notify:
