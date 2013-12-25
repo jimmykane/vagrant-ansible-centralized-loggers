@@ -1,8 +1,5 @@
-- name: Install wget
-  yum: name=wget state=present
-
 - name: Fetch Elasticsearch .rpm
-  command: wget {{ elurl }}-{{ ver }}.noarch.rpm -O /tmp/elasticsearch-{{ ver }}.noarch.rpm creates=/tmp/elasticsearch-{{ ver }}.noarch.rpm
+  get_url: url={{ elurl }}-{{ ver }}.noarch.rpm dest=/tmp/elasticsearch-{{ ver }}.noarch.rpm
 
 - name: Install Elasticsearch from .rpm
   yum:  name=/tmp/elasticsearch-{{ ver }}.noarch.rpm state=present

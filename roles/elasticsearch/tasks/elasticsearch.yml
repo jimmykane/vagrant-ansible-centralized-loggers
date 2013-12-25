@@ -1,5 +1,5 @@
 - name: Fetch Elasticsearch .deb
-  command: wget {{ elurl }}-{{ ver }}.deb -O /tmp/elasticsearch-{{ ver }}.deb creates=/tmp/elasticsearch-{{ ver }}.noarch.rpm
+  get_url: url={{ elurl }}-{{ ver }}.deb dest=/tmp/elasticsearch-{{ ver }}.deb
 
 - name: Install Elasticsearch from .deb
   command: dpkg -i --skip-same-version /tmp/elasticsearch-{{ ver }}.deb
