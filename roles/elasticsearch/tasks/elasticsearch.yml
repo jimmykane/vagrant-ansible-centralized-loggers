@@ -5,3 +5,5 @@
   command: dpkg -i --skip-same-version /tmp/elasticsearch-{{ ver }}.deb
   register: dpkg_result
   changed_when: "dpkg_result.stdout.startswith('Selecting')" # see http://stackoverflow.com/questions/19127493
+  notify:
+   - restart elasticsearch

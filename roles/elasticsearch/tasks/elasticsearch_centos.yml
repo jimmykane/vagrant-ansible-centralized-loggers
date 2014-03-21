@@ -3,3 +3,5 @@
 
 - name: Install Elasticsearch from .rpm
   yum:  name=/tmp/elasticsearch-{{ ver }}.noarch.rpm state=present
+  notify:
+   - restart elasticsearch
