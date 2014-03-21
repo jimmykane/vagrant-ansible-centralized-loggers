@@ -28,13 +28,11 @@ This playbook is intended to be run against a clean server (not clients) that wi
 
 **pass** : password for Apache auth
 
-**myip**: ip address of the client authorized to connect at http://$domain/kibana-3.0.0milestone4/
-
 ### Use
 
-`ansible-playbook site.yml --extra-vars="usname= domain= pass= myip="`
+`ansible-playbook site.yml `
 
-use **--skip-tags** if you want to skip a role, shorewall for example: --skip-tags=shorewall
+use **--skip-tags** if you want to skip a role.
 
 Et voila, your centralized logging server is up and running!
 
