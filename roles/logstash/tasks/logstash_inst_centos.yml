@@ -1,0 +1,6 @@
+- name: Fetch Logstash .rpm
+  get_url: url={{ logstash_url_centos }}/{{ logstash_ver_centos }}.noarch.rpm dest=/tmp/{{ logstash_ver_centos }}.noarch.rpm
+
+- name: Install Logstash from rpm
+  yum:  name=/tmp/{{ logstash_ver_centos }}.noarch.rpm state=present
+

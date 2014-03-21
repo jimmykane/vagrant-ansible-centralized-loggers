@@ -1,0 +1,9 @@
+- name: Fetch Logstash .deb
+  get_url: url={{ logstash_url_deb }}/{{ logstash_ver_deb }}.deb dest=/tmp/{{ logstash_ver_deb }}.deb
+
+- name: Install Logstash from .deb
+  command: dpkg -i --skip-same-version /tmp/{{ logstash_ver_deb }}.deb
+  register: dpkg_result
+  changed_when: "dpkg_result.stdout.startswith('Selecting')"
+
+
