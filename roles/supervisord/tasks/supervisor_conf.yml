@@ -1,8 +1,0 @@
-- name: Create log2redis conf for supervisor
-  template: src=log2redis_superv.j2 dest="/etc/supervisor/conf.d/log2redis_superv.conf" owner=root group=root mode=0644
-  notify:
-   - restart supervisor
-- name: Create redis2elastic conf for supervisor
-  template: src=redis2elastic_superv.j2 dest="/etc/supervisor/conf.d/redis2elastic_superv.conf" owner=root group=root mode=0644
-  notify:
-   - restart supervisor

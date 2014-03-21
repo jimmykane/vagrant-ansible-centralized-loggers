@@ -1,8 +1,0 @@
-[program:l2r]
-process_name=log2redis
-command=/usr/bin/java -jar /usr/share/logstash/bin/logstash-{{ lgver }}-flatjar.jar agent -f /etc/logstash.d/redis/
-user=root
-startretries=3
-redirect_stderr=true
-std_out_logfile=NONE
-startsecs=3

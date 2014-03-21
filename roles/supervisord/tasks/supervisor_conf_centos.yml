@@ -1,4 +1,0 @@
-- name: Apply supervisord Conf
-  template: src=supervisord.j2 dest="/etc/supervisord.conf" owner=root group=root mode=0644
-  notify:
-   - restart supervisord

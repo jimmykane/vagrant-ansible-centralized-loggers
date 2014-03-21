@@ -1,7 +1,0 @@
-- name: Install supervisord 
-  yum: name={{ item }} state=installed
-  with_items:
-   - supervisor
-  notify:
-   - restart supervisord
-

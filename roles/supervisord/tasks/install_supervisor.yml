@@ -1,7 +1,0 @@
-- name: Install supervisord 
-  apt: pkg={{ item }} state=installed
-  with_items:
-   - supervisor
-  notify:
-   - restart supervisor
-
