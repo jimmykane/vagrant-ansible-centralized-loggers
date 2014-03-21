@@ -1,2 +1,0 @@
-- include: shorewall.yml
-  when: ansible_os_family == "Debian"
