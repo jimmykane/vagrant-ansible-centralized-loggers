@@ -2,8 +2,3 @@
   apt: pkg={{ item }} state=installed
   with_items:
    - redis-server
-- name: Copy Redis config
-  template: src=redis.j2 dest=/etc/redis/redis.conf owner=root group=root mode=0644
-  notify:
-   - restart redis
-
