@@ -1,4 +1,15 @@
+epel_url: "http://ftp.linux.cz/pub/linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm"
+
 elurl: "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch"
 lgurl: "https://download.elasticsearch.org/logstash/logstash/logstash"
-ver: "0.90.9"
-lgver: "1.3.2"
+ver: "1.0.1"
+
+logstash_url_deb: "https://download.elasticsearch.org/logstash/logstash/packages/debian"
+logstash_ver_deb: "logstash_1.4.0-1-c82dc09_all"
+
+logstash_url_centos: "https://download.elasticsearch.org/logstash/logstash/packages/centos"
+logstash_ver_centos: "logstash-1.4.0-1_c82dc09"
+
+usname: "mylogger"
+domain: "logger"
+pass:   "mypass"
