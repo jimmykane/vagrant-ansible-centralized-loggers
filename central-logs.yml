@@ -1,5 +1,5 @@
 ---
-- hosts: logger
+- hosts: loggers
   vars_files:
    - vars/default.yml
   roles:
@@ -7,9 +7,4 @@
     - { role: redis, tags: ["redis"] }
     - { role: elasticsearch, tags: ["elasticsearch"] }
     - { role: logstash, tags: ["logstash"] }
-    - { role: supervisord, tags: ["supervisor"] }
     - { role: apache-kibana, tags: ["apache-kibana"] }
-    - { role: shorewall, tags: ["shorewall"] }
-##
-## At this moment Shorewall is available only for Debian role.
-## I'm working to estend the role to CentOS too
