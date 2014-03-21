@@ -53,21 +53,11 @@ This is what the Playbook do:
 
 5. Setup and configure Apache and Kibana 3 with simple HTTP authentication
 
-
 ### TODO
-
-Add support for Statsd and Librato
 
 Rsyslog-server role can be extended with TLS support. See http://www.rsyslog.com/doc/rsyslog_tls.html
 
-
-### PS
-
-At some point in future you will need to update Elasticsearch and Logstash version in vars/default.yml
-
-If you like this project feel free to report a bug or contribute with a pull requests!
-
-### Links
+### Credits
 
 [Ansible](http://www.ansibleworks.com/)
 
