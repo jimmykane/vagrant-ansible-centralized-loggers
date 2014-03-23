@@ -13,9 +13,6 @@
   notify:
    - restart logstash
 
-#- name: Create Logstash Redis filters configuration
-#  template: src=filters_log2redis.conf.j2 dest="/etc/logstash/conf.d/filters_log2redis.conf" owner=root group=root mode=0644
-
 - name: Create Logstash Redis output configuration
   template: src=output_log2redis.conf.j2 dest="/etc/logstash/conf.d/output_log2redis.conf" owner=root group=root mode=0644
 
