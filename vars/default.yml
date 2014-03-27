@@ -4,11 +4,7 @@ elurl: "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticse
 lgurl: "https://download.elasticsearch.org/logstash/logstash/logstash"
 ver: "1.0.1"
 
-logstash_url_deb: "https://download.elasticsearch.org/logstash/logstash/packages/debian"
-logstash_ver_deb: "logstash_1.4.0-1-c82dc09_all"
-
-logstash_url_centos: "https://download.elasticsearch.org/logstash/logstash/packages/centos"
-logstash_ver_centos: "logstash-1.4.0-1_c82dc09"
+logstash_version: "1.4"
 
 usname: "mylogger"
 domain: "logger"

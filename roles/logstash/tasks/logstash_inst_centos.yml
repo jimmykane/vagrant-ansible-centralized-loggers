@@ -8,4 +8,5 @@
   yum: name={{ item }} state=latest
   with_items:
    - logstash
+   - logstash-contrib
 
