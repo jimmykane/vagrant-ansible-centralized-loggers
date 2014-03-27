@@ -1,6 +1,11 @@
-- name: Fetch Logstash .rpm
-  get_url: url={{ logstash_url_centos }}/{{ logstash_ver_centos }}.noarch.rpm dest=/tmp/{{ logstash_ver_centos }}.noarch.rpm
+- name: Add Logstash repo key
+  rpm_key: key="http://packages.elasticsearch.org/GPG-KEY-elasticsearch" state=present
 
-- name: Install Logstash from rpm
-  yum:  name=/tmp/{{ logstash_ver_centos }}.noarch.rpm state=present
+- name: Enable Logstash repository
+  template: src=logstash_repo.j2 dest=/etc/yum.repos.d/logstash.repo
+
+- name: Install Logstash from repository
+  yum: name={{ item }} state=latest
+  with_items:
+   - logstash
 
