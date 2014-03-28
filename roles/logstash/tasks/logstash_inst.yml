@@ -1,6 +1,0 @@
-- name: Create Logstash dir
-  file: path="/usr/share/logstash/bin" owner=root group=root mode=0755 state=directory
-
-- name: Fetch Logstash Jar
-  get_url: url={{ lgurl }}-{{ lgver }}-flatjar.jar dest=/usr/share/logstash/bin/logstash-{{ lgver }}-flatjar.jar
-
