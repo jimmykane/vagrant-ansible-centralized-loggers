@@ -2,8 +2,7 @@
 input {
 	file {
 		type => "linux-syslog"
-		path => ["/var/log/*.log"]
-####		sincedb_path => "/usr/share/logstash/"
+		path => ["/var/log/*"]
 		exclude => [ "*.gz" ]
 		codec => plain { charset => "ISO-8859-1" }
 	}
