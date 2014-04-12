@@ -4,8 +4,6 @@
   remote_user: vagrant
   sudo: yes
 
-  vars_files:
-   - vars/default.yml
   roles:
     - timezone
     - common
