@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.network :public_network
 
   # Setup the hostname
-  config.vm.hostname = "graylog-vm"
+  config.vm.hostname = "logging-vm"
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
 
-  config.vm.synced_folder ".", "/home/vagrant1/",
+  config.vm.synced_folder ".", "/home/vagrant/",
     :nfs => {
       #:mount_options => ['noatime'],
       #:exports_options => ['rw','sync','nohide'],

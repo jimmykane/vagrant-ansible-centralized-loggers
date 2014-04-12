@@ -1,0 +1,9 @@
+---
+
+- name: Dowload Kibana from Repo
+  git: repo=git://github.com/elasticsearch/kibana.git
+       dest=/home/{{ usname }}/public_html/kibana
+       version=release-v3.0.1
+
+- name: Set Kibana permission
+  command: /bin/chown -R {{ usname }}.{{ usname }} /home/{{ usname }}/public_html/

@@ -11,7 +11,7 @@
   apt_key: url="http://packages.elasticsearch.org/GPG-KEY-elasticsearch" state=present
 
 - name: Install Logstash from repository
-  apt: pkg={{ item }} update_cache=yes cache_valid_time={{ apt_valid_cache_time }} state=present
+  apt: pkg={{ item }} update_cache=yes cache_valid_time={{ apt_valid_cache_time }} state=present force=yes
   with_items:
    - logstash
   # - logstash-contrib # Disabled until this bug will be closed: https://logstash.jira.com/browse/LOGSTASH-2025

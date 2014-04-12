@@ -8,6 +8,6 @@ ver: "1.0.1"
 
 logstash_version: "1.4"
 
-usname: "vagrant"
+usname: "myuser"
 domain: "logger.dev"
 pass:   "mypass"

@@ -1,3 +1,4 @@
 - include: install_apache.yml
 - include: adduser.yml
+- include: install_kibana.yml
 - include: createvhost.yml
