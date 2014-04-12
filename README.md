@@ -1,10 +1,12 @@
-### Ansible Playbook for automate the setup and configuration of a centralized Rsyslog server with Logstash, Elasticsearch, Redis and Kibana.
+Loggers
+======
 
-This playbook is intended to be run against a clean server (not clients) that will be used as central logger. After the setup of the server, clients cat be instructed to redirect all logs to the central location.
 
-**Platform**: Tested on **Debian 7 x64** / **CentOS 6.x x64**
 
-**Disclaimer**: do not run this Playbook on a live production system!! Use a dedicated instance instead.
+Vagrant - Ansible provisioned centralized Rsyslog server with Logstash, Elasticsearch, Redis and Kibana.
+----
+
+**Platform**: Tested on **Ubuntu Saucy x64** / **CentOS 6.x x64**
 
 **Prerequisites**: At least 1GB Ram required. 2GB is better
 
@@ -12,50 +14,43 @@ This playbook is intended to be run against a clean server (not clients) that wi
 
 ![Picture](http://www.servermanaged.it/wp-content/uploads/2013/10/Setup-Logstash-Elasticsearch-Kibana.png)
 
-### Preparation
 
-1. Setup your target host in hosts
+Install
+--------
 
-2. Add your custom domain in /etc/hosts on your local box. Example: 11.11.11.11 logger
+
+- Install [Vagrant](https://www.vagrantup.com/downloads.html)
+
+- Clone this repo: ```git clone https://github.com/jimmykane/vagrant-ansible-centralized-loggers.git```
+
+- Get into it ```cd vagrant-ansible-centralized-loggers```
+
+- Do ```vagrant up```
+
+- Wait until provisioning is done
+
+- Visit ```192.168.33.11/kibana``` with your favourite browser
+
+You are all setup with the latest Ubuntu Saucy, Rsyslog, Redis, ElsticSearch, Logstash, Kibana.
+
+
+Customization
+-----
+
+- Go to ```/group_vars/all ``` and set the correct settings for you. Eg timezone or what else is needed. 
+Further instruction on how to go on production will come soon. 
+- Setup your target host in hosts
+- Add your custom domain in ```/etc/hosts``` on your local box. Example: ```192.168.33.11 logger.dev```
 
 ### Variables
 
-**usname** : username of the Apache user 
+ -  **apt_valid_cache_time**: How often to refresh apt-cache. Default 6hours (21600s)
+ -  **locale/timezone**: The locale and timezone for the server
+ -  **usname** : username of the Apache user.
+ -  **domain** : domain name of Apache vhost. Example: logger
+ -  **pass** : password for Apache auth
 
-**domain** : domain name of Apache vhost. Example: logger
 
-**pass** : password for Apache auth
-
-### Use
-
-`ansible-playbook site.yml `
-
-use **--skip-tags** if you want to skip a role.
-
-Et voila, your centralized logging server is up and running!
-
-Browse **http://$domain/kibana-3.0.0milestone4/** and happy logging!
-
-![Picture](http://www.elasticsearch.org/content/uploads/2013/08/BQIielHCAAAs2So.png)
-Image credit: elasticsearch.org
-
-See central-logs.yml for all tags available. Please note that tags must be launched in appearance order.
-
-This is what the Playbook do:
-
-1. Setup and configure Rsyslog to listen on tcp 514
-
-2. Setup and configure Redis
-
-3. Setup and configure Logstash
-
-4. Setup and configure Elasticsearch, Install Open-Jdk
-
-5. Setup and configure Apache and Kibana 3 with simple HTTP authentication
-
-### TODO
-
-Rsyslog-server role can be extended with TLS support. See http://www.rsyslog.com/doc/rsyslog_tls.html
 
 ### Credits
 
@@ -70,3 +65,5 @@ Rsyslog-server role can be extended with TLS support. See http://www.rsyslog.com
 [Redis](http://redis.io/)
 
 [Ansible Fan Community](https://plus.google.com/u/0/communities/108222183653550371543)
+
+[Ansible Logstash by Valentino Gagliardi](https://github.com/valentinogagliardi/ansible-logstash)
