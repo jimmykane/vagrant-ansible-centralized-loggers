@@ -1,0 +1,16 @@
+---
+- name: Configure and deploy Graylog servers
+  hosts: vagrant
+  remote_user: vagrant
+  sudo: yes
+
+  vars_files:
+   - vars/default.yml
+  roles:
+    - timezone
+    - common
+    - { role: rsyslog-server, tags: ["rsyslog-server"] }
+    - { role: redis, tags: ["redis"] }
+    - { role: elasticsearch, tags: ["elasticsearch"] }
+    - { role: logstash, tags: ["logstash"] }
+    - { role: apache-kibana, tags: ["apache-kibana"] }

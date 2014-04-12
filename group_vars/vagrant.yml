@@ -1,0 +1,5 @@
+---
+# Vars for Vagrant setup only
+usname: "vagrant"
+domain: "logger.dev"
+pass: "mypass"

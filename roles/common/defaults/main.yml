@@ -1,0 +1,17 @@
+---
+# Packages
+
+install_ubuntu_packages:
+  - build-essential
+  - make
+  - curl
+  - git-core
+  - libsqlite3-dev
+  - sqlite3
+  - vim
+  - htop
+  - nano
+  - tmux
+  - screen
+
+remove_ubuntu_packages: []

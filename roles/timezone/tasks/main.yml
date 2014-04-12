@@ -1,0 +1,21 @@
+---
+# Locale and timezone
+
+- name: Generate locales
+  command: locale-gen {{ locale }}
+
+- name: Set locale
+  command: /usr/sbin/update-locale LANG={{ locale }} LC_ALL={{ locale }}
+
+- name: Set local timezone
+  command: /bin/cp /usr/share/zoneinfo/{{ timezone }} /etc/localtime
+
+- name: Set timezone
+  template:
+    src: timezone.j2
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: update tzdata
