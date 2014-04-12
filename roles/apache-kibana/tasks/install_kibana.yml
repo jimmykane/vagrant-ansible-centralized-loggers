@@ -2,8 +2,16 @@
 
 - name: Dowload Kibana from Repo
   git: repo=git://github.com/elasticsearch/kibana.git
-       dest=/home/{{ usname }}/public_html/kibana
-       version=release-v3.0.1
+       dest=/tmp/kibana
+       version=v3.0.1
+       force=yes
+       update=yes
+
+- name: Clean up old Kibana install
+  shell: rm -rf /home/{{ usname }}/public_html/kibana/*
+
+- name: Move Kibana to public
+  shell: cp -R /tmp/kibana/src/*  /home/{{ usname }}/public_html/kibana/
 
 - name: Set Kibana permission
-  command: /bin/chown -R {{ usname }}.{{ usname }} /home/{{ usname }}/public_html/
+  command: /bin/chown -R {{ usname }}.{{ usname }} /home/{{ usname }}/public_html/kibana
