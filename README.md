@@ -29,7 +29,7 @@ Install
 
 - Wait until provisioning is done
 
-- Visit ```192.168.33.11/kibana``` with your favourite browser
+- Visit ```192.168.33.11/kibana``` with your favourite browser. Username is: ```myuser``` and pass is ```mypass```
 
 You are all setup with the latest Ubuntu Saucy, Rsyslog, Redis, ElsticSearch, Logstash, Kibana.
 
