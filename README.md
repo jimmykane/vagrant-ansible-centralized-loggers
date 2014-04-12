@@ -56,6 +56,8 @@ TODO
 - Add support for Graylog2
 - User management
 - Ansible-Pull crons
+- Remove unused and untested hosts inventory and replace it with a better structure
+- Regarding the above 2 structures: dev and production
 
 
 ### Credits
