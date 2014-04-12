@@ -16,21 +16,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # using a specific IP.
   config.vm.network :private_network, ip: "192.168.33.11"
   #config.vm.network "public_network", :bridge => 'en0: Wi-Fi (AirPort)'
-  #config.vm.network :public_network
 
   # Setup the hostname
-  config.vm.hostname = "logging-vm"
+  config.vm.hostname = "central-logger-vm"
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
-  config.ssh.forward_agent = true
+  #config.ssh.forward_agent = true
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
 
-  config.vm.synced_folder ".", "/home/vagrant/",
+  config.vm.synced_folder ".", "/home/vagrant/ansible-logstash",
     :nfs => {
       #:mount_options => ['noatime'],
       #:exports_options => ['rw','sync','nohide'],
