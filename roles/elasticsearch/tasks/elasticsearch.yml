@@ -7,3 +7,6 @@
   changed_when: "dpkg_result.stdout.startswith('Selecting')" # see http://stackoverflow.com/questions/19127493
   notify:
    - restart elasticsearch
+
+- name: Ensure Elasticsearch is running
+  service: name=elasticsearch state=running enabled=yes
