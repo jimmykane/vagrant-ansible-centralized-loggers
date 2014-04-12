@@ -51,6 +51,12 @@ Further instruction on how to go on production will come soon.
  -  **pass** : password for Apache auth
 
 
+TODO
+----
+- Add support for Graylog2
+- User management
+- Ansible-Pull crons
+
 
 ### Credits
 
