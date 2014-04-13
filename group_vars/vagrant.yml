@@ -11,3 +11,8 @@ logstash_version: "1.4"
 usname: "myuser"
 domain: "logger.dev"
 pass:   "mypass"
+
+# Since Vagrant uses cloud image (should be a task or so) we don't need puppet to be isntalled/listening
+remove_ubuntu_packages:
+  - puppet
+  - puppet-common
