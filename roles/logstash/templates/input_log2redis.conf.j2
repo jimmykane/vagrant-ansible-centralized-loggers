@@ -2,7 +2,7 @@
 input {
 	file {
 		type => "linux-syslog"
-		path => ["/var/log/*"]
+		path => ["/var/log/rsysloghosts/*"]
 		exclude => [ "*.gz" ]
 		codec => plain { charset => "ISO-8859-1" }
 	}

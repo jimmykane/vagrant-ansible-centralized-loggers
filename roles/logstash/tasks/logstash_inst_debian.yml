@@ -15,3 +15,4 @@
   with_items:
    - logstash
   # - logstash-contrib # Disabled until this bug will be closed: https://logstash.jira.com/browse/LOGSTASH-2025
+

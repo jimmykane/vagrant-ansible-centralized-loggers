@@ -4,7 +4,7 @@
   git: repo=git://github.com/elasticsearch/kibana.git
        dest=/tmp/kibana
        version=v3.0.1
-       force=yes
+       force=no
        update=yes
 
 - name: Clean up old Kibana install
