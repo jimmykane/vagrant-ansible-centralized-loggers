@@ -8,6 +8,10 @@
   notify:
    - restart logstash
 
+# There is a bug and in ubuntu 13.10 the above permissions dont alter the gui/uid of the service
+- name: Add logstash user to group adm
+  user: name=logstash groups=adm append=yes
+
 - name: Create Logstash Redis input configuration
   template: src=input_log2redis.conf.j2 dest="/etc/logstash/conf.d/input_log2redis.conf" owner=root group=root mode=0644
   notify:
