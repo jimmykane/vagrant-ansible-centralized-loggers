@@ -5,7 +5,7 @@
        dest=/tmp/kibana
        version=v3.0.1
        force=no
-       update=yes
+       update=no
 
 - name: Clean up old Kibana install
   shell: rm -rf /home/{{ usname }}/public_html/kibana/*
