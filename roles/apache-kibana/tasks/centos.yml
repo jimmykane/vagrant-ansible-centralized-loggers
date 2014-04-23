@@ -1,4 +1,0 @@
-- include: install_httpd.yml
-- include: adduser_centos.yml
-- include: install_kibana.yml
-- include: createvhost_centos.yml

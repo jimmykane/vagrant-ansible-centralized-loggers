@@ -1,4 +1,0 @@
-- name: Create Vhost from template
-  template: src=vhost.j2 dest=/etc/httpd/conf.d/{{ domain }}.conf owner=root group=root mode=0644
-  notify:
-   - restart httpd

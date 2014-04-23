@@ -1,9 +1,0 @@
-{{ ansible_managed }}
-Order deny,allow
-Deny from all
-AuthType Basic
-AuthUserFile /etc/httpd/passwd
-AuthName "Protected Area"
-require valid-user
-Satisfy Any
-{{ ansible_managed }}
