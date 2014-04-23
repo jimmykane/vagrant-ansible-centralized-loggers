@@ -1,2 +1,0 @@
-- name: restart redis centos
-  service: name=redis state=restarted enabled=yes
