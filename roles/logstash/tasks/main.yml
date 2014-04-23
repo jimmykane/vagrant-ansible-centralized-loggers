@@ -1,7 +1,4 @@
 - include: logstash_inst_debian.yml
   when: ansible_os_family == "Debian"
 
-- include: logstash_inst_centos.yml
-  when: ansible_os_family == "RedHat"
-
 - include: logstash_conf.yml
