@@ -6,7 +6,7 @@ Vagrant Ansible Centralized Loggers
 Vagrant - Ansible provisioned centralized Rsyslog server with Logstash, Elasticsearch, Redis and Kibana.
 ----
 
-**Platform**: Tested on **Ubuntu Saucy x64** / **CentOS 6.x x64**
+**Platform**: Tested on **Ubuntu Trusty Tahr 14.04 x64**
 
 **Prerequisites**: At least 1GB Ram required. 2GB is better
 
